@@ -2,7 +2,7 @@ document.getElementById("proxyForm").addEventListener("submit", function(event) 
     event.preventDefault();
     const url = document.getElementById("url").value;
 
-    fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`)
+    fetch(`https://cors-anywhere.herokuapp.com/${url}`)
         .then(response => {
             if (!response.ok) throw new Error("Network response was not OK");
             return response.json();
